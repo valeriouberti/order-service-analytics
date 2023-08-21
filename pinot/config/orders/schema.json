@@ -1,0 +1,23 @@
+{
+  "schemaName": "orders",
+  "dimensionFieldSpecs": [
+    {"name": "id", "dataType": "STRING"},
+    {"name": "user_id", "dataType": "INT"},
+    {"name": "delivery_lat", "dataType": "DOUBLE"},
+    {"name": "delivery_lon", "dataType": "DOUBLE"},
+    {"name": "items", "dataType": "JSON"}
+  ],
+  "metricFieldSpecs": [
+    {"name": "products_ordered", "dataType": "INT"},
+    {"name": "total_quantity", "dataType": "INT"},
+    {"name": "total_price", "dataType": "DOUBLE"}
+  ],
+  "dateTimeFieldSpecs": [
+    {
+      "name": "ts",
+      "dataType": "TIMESTAMP",
+      "format": "1:MILLISECONDS:EPOCH",
+      "granularity": "1:MILLISECONDS"
+    }
+  ]
+}

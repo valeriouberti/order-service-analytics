@@ -53,7 +53,7 @@ coverage.xml
 *.sublime-workspace
 *.iml
 
-
+poetry.lock
 # Environments
 .env
 .venv

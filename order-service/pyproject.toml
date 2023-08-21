@@ -2,7 +2,7 @@
 name = "order-service"
 version = "0.1.0"
 description = ""
-authors = ["valeriouberti <valerio.uberti@leitha.eu>"]
+authors = ["valeriouberti <valeriouberti@icloud.com>"]
 readme = "README.md"
 packages = [{include = "src"}]
 
