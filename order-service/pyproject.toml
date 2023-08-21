@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "order-service"
+version = "0.1.0"
+description = ""
+authors = ["valeriouberti <valerio.uberti@leitha.eu>"]
+readme = "README.md"
+packages = [{include = "src"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+confluent-kafka = "^2.2.0"
+fastapi = "^0.101.1"
+uvicorn = {extras = ["standard"], version = "^0.23.2"}
+pydantic-settings = "^2.0.3"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
