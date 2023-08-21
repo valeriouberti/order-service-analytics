@@ -9,7 +9,7 @@ load_dotenv()
 
 class Settings(BaseSettings):
     BOOTSTRAP_SERVERS: str = os.environ.get("BOOTSTRAP_SERVERS", "localhost:29092")
-    ORDER_TOPIC: str = os.environ.get("ORDER_TOPIC", "orders")
+    KAFKA_TOPIC: str = os.environ.get("ORDER_TOPIC", "orders")
     API_KEYS: List = os.environ.get("API_KEYS", "changeme").split(",")
 
 

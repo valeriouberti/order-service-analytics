@@ -11,7 +11,7 @@ from settings.settings import settings
 
 app = FastAPI()
 
-topic = settings.ORDER_TOPIC
+topic = settings.KAFKA_TOPIC
 producer_conf = {'bootstrap.servers': settings.BOOTSTRAP_SERVERS}
 string_serializer = StringSerializer('utf_8')
 
