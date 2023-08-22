@@ -1,3 +1,5 @@
+from typing import List, Optional
+
 from pydantic import BaseModel
 
 
@@ -11,7 +13,7 @@ class Order(BaseModel):
     id: str
     total_price: float
     user_id: int
-    items: Items
-    created_at: str
+    items: List[Items]
+    created_at: Optional[int]
     delivery_lat: float
     delivery_lon: float

@@ -1,3 +1,4 @@
+import datetime
 from uuid import uuid4
 
 import uvicorn
@@ -31,6 +32,7 @@ def get_api_key(
 
 @app.post("/orders", dependencies=[Depends(get_api_key)])
 def create_order(order: Order):
+    order.created_at = round(datetime.datetime.now().timestamp() * 1000)
     producer = Producer(producer_conf)
     producer.produce(topic=topic,
                      key=string_serializer(str(uuid4())),
@@ -41,4 +43,4 @@ def create_order(order: Order):
 
 
 if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    uvicorn.run(app, host="localhost", port=8050)
