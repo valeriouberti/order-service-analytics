@@ -1,6 +1,8 @@
 # Order Service Analytics
 This a sample example of a realtime order service analytics application using FastApi, Kafka Apache Pinot and Dash.
 
+![Order Service Analytics](/docs/images/order-service-analytics.png)
+
 ## Installation
 
 To use the application, you'll need Python 3.11 and Docker installed on your system. Follow these steps to set up the application:
