@@ -12,41 +12,6 @@ curs = conn.cursor()
 app = Dash(__name__, title="Order Delivery Dashboard", external_stylesheets=[dbc.themes.BOOTSTRAP])
 server = app.server
 
-"""
-
-Get graph of orders per hour
-"""
-
-
-def get_graphs():
-    query = """
-    select ToDateTime(DATETRUNC('minute', ts), 'yyyy-MM-dd HH:mm:ss') AS dateMin, 
-    count(*) AS orders, 
-    sum(total_price) AS revenue
-    from orders 
-    where ts > ago('PT1H')
-    group by dateMin
-    order by dateMin desc
-    LIMIT 10000
-    """
-    curs.execute(query)
-    df_ts = pd.DataFrame(curs, columns=[item[0] for item in curs.description])
-    df_ts_melt = pd.melt(df_ts, id_vars=['dateMin'], value_vars=['revenue', 'orders'])
-    orders = df_ts_melt[df_ts_melt.variable == "orders"]
-    latest_date = orders.dateMin.max()
-
-    revenue_complete = orders[orders.dateMin < latest_date]
-    fig = go.Figure(data=[
-        go.Scatter(x=revenue_complete.dateMin,
-                   y=revenue_complete.value, mode='lines',
-                   line={'dash': 'solid', 'color': 'green'}),
-    ])
-    fig.update_layout(showlegend=False, title="Orders per minute",
-                      margin=dict(l=0, r=0, t=40, b=0), )
-    fig.update_yaxes(range=[0, df_ts["orders"].max() * 1.1])
-
-    return fig
-
 
 """
 Create the layout
@@ -54,10 +19,6 @@ Create the layout
 app.layout = dbc.Container([
     html.H1(children='Order Delivery Analytics', style={'textAlign': 'center'}),
     html.Div(id='live-update-metrics'),
-    html.Div([
-        dcc.Graph(figure=get_graphs()),
-    ]
-    ),
     html.Br(),
     dbc.Container(children=[
         html.H3(children='Latest Order', style={'textAlign': 'center'}),

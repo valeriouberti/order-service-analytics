@@ -4,7 +4,7 @@ certifi==2023.7.22 ; python_version >= "3.11" and python_version < "4"
 charset-normalizer==3.2.0 ; python_version >= "3.11" and python_version < "4.0"
 ciso8601==2.3.0 ; python_version >= "3.11" and python_version < "4"
 click==8.1.7 ; python_version >= "3.11" and python_version < "4.0"
-colorama==0.4.6 ; python_version >= "3.11" and python_version < "4.0" and platform_system == "Windows"
+colorama==0.4.6;
 dash-core-components==2.0.0 ; python_version >= "3.11" and python_version < "4.0"
 dash-html-components==2.0.0 ; python_version >= "3.11" and python_version < "4.0"
 dash-table==5.0.0 ; python_version >= "3.11" and python_version < "4.0"
