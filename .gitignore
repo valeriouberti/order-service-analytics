@@ -63,10 +63,6 @@ ENV/
 env.bak/
 venv.bak/
 
-# Docker
-Dockerfile
-docker-compose.yml
-.dockerignore
 
 # Python-Related Files
 *.log
