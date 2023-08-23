@@ -53,11 +53,13 @@ Once you've installed the Order Service, you can run it locally.
      "id": "12345",
      "total_price": 99.99,
      "user_id": 9876,
-     "items": {
-       "product_id": 1,
-       "quantity": 3,
-       "price": 29.99
-     },
+     "items": [
+         {
+         "product_id": 1,
+         "quantity": 3,
+         "price": 29.99
+         }
+     ],
      "created_at": "2023-08-19T12:00:00Z",
      "delivery_lat": 40.7128,
      "delivery_lon": -74.0060
