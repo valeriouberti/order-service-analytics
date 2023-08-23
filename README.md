@@ -1,7 +1,10 @@
 # Order Service Analytics
 This a sample example of a realtime order service analytics application using FastApi, Kafka Apache Pinot and Dash.
 
-![Order Service Analytics](/docs/images/order-service-analytics.png)
+
+<p align="center">
+  <img src="/docs/images/order-service-analytics.png" />
+</p>
 
 ## Installation
 
